@@ -1,8 +1,13 @@
 stages:
   - test
 
-run-tests:
+run-api-tests:
   stage: test
-  image: maven:3.9-eclipse-temurin-21
   script:
-    - mvn test
+    - /Applications/apache-maven-3.8.6/bin/mvn clean test
+    - /usr/local/bin/allure generate target/allure-results --clean -o target/allure-report
+  artifacts:
+    when: always
+    paths:
+      - target/allure-report/
+      - target/allure-results/
