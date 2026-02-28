@@ -1,7 +1,7 @@
 stages:
   - test
 
-run-api-tests:
+run-tests:
   stage: test
   script:
     - /Applications/apache-maven-3.8.6/bin/mvn clean test
