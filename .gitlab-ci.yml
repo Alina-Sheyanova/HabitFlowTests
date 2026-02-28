@@ -1,4 +1,4 @@
-бstages:
+stages:
   - test
 
 run-tests:
